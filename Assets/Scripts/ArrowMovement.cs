@@ -21,7 +21,6 @@ public class ArrowMovement : MonoBehaviour
     private Vector2 _direction;
     private float _speed;
 
-    [SerializeField]
     private PlayerController _player;
 
     void Start()
@@ -80,6 +79,11 @@ public class ArrowMovement : MonoBehaviour
         float xx = Mathf.Cos(transform.rotation.eulerAngles.z * Mathf.Deg2Rad);
         _direction = new Vector2(xx, yy).normalized;
 
+    }
+
+    public void SetPlayer(GameObject clone)
+    {
+        _player = clone.GetComponent<PlayerController>();
     }
 
     private void StopArrowSpeed()

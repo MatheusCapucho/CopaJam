@@ -4,9 +4,8 @@ using UnityEngine;
 using System;
 public class RicharlisonEffect : MonoBehaviour, IEffect
 {
-    [SerializeField] private ShopItem _item;
     [SerializeField] private float _addForce = 10f;
-    [SerializeField] private Vector2 _forceDirection;
+    [SerializeField] private Vector2 _forceDirection = new Vector2(1, 1);
 
     private PlayerController _player;
 
@@ -21,6 +20,7 @@ public class RicharlisonEffect : MonoBehaviour, IEffect
             return;
 
         _player.AddForce((Vector3)_forceDirection, _addForce);
+        gameObject.SetActive(false);
         GameManager.Instance.RicharlisonEffect = false;
 
     }

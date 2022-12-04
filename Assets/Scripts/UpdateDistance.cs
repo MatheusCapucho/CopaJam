@@ -5,7 +5,7 @@ using TMPro;
 
 public class UpdateDistance : MonoBehaviour
 {
-    [SerializeField] private GameObject _player;
+    private GameObject _player;
 
     private int _startPos;
     private TextMeshProUGUI _distanceText;
@@ -13,10 +13,21 @@ public class UpdateDistance : MonoBehaviour
     public int CurrentDistance => _currentDistance;
 
     private void Start()
-    {
-        _startPos = (int)_player.transform.position.x;
+    {    
         _distanceText = GameObject.Find("DistanceText").GetComponent<TextMeshProUGUI>();
     }
+
+    public void SetPlayer(GameObject player)
+    {
+        _player = player;
+        _startPos = (int)_player.transform.position.x;
+    }
+
+    private void OnEnable()
+    {
+        
+    }
+
     void FixedUpdate()
     {
         if (!GameManager.Instance.GameHasStarted)
@@ -27,4 +38,5 @@ public class UpdateDistance : MonoBehaviour
         _distanceText.text = "   Distância: " + _currentDistance; 
 
     }
+
 }

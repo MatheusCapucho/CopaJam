@@ -28,6 +28,8 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    int currentDistanceIndex;
+
 
 
     private void Awake()
@@ -133,13 +135,43 @@ public class GameManager : MonoBehaviour
         topScores.Sort();
         topScores.Reverse();
 
+        
+        for (int i = 0; i < 5; i++)
+        {
+            if (topScores[i] == currentDistance)
+                currentDistanceIndex = i;
+        }
+
         PlayerPrefs.SetInt("Top1", topScores[0]);
         PlayerPrefs.SetInt("Top2", topScores[1]);
         PlayerPrefs.SetInt("Top3", topScores[2]);
         PlayerPrefs.SetInt("Top4", topScores[3]);
         PlayerPrefs.SetInt("Top5", topScores[4]);
 
+    }
 
+    public void SetTopNames(string name)
+    {
+        switch (currentDistanceIndex) 
+        {
+            case 0:
+                PlayerPrefs.SetString("Top1Name", name);
+                break;
+            case 1:
+                PlayerPrefs.SetString("Top2Name", name);
+                break;
+            case 2:
+                PlayerPrefs.SetString("Top3Name", name);
+                break;
+            case 3:
+                PlayerPrefs.SetString("Top4Name", name);
+                break;
+            case 4:
+                PlayerPrefs.SetString("Top5Name", name);
+                break;
+            default:
+                break;
+        }
     }
 
     private void ResetConfigs()
@@ -154,23 +186,28 @@ public class GameManager : MonoBehaviour
         if (!PlayerPrefs.HasKey("Top1"))
         {
             PlayerPrefs.SetInt("Top1", 0);
+            PlayerPrefs.SetString("Top1Name", "'Nome':");
         }
         if (!PlayerPrefs.HasKey("Top2"))
         {
             PlayerPrefs.SetInt("Top2", 0);
+            PlayerPrefs.SetString("Top2Name", "'Nome':");
         }
         if (!PlayerPrefs.HasKey("Top3"))
         {
             PlayerPrefs.SetInt("Top3", 0);
+            PlayerPrefs.SetString("Top3Name", "'Nome':");
         }
         if (!PlayerPrefs.HasKey("Top4"))
         {
             PlayerPrefs.SetInt("Top4", 0);
+            PlayerPrefs.SetString("Top4Name", "'Nome':");
 
         }
         if (!PlayerPrefs.HasKey("Top5"))
         {
             PlayerPrefs.SetInt("Top5", 0);
+            PlayerPrefs.SetString("Top5Name", "'Nome':");
         }
     }
 

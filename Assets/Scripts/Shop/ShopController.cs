@@ -8,6 +8,8 @@ public class ShopController : MonoBehaviour
     [SerializeField] private TextMeshProUGUI _textElement;
     [SerializeField] ShopItem[] _itens;
 
+    [SerializeField] private float _superChuteiraMultiplier = 2f;
+
     private int _currentCoins = 0;
 
     private void Start()
@@ -25,6 +27,7 @@ public class ShopController : MonoBehaviour
             return;
 
         _currentCoins -= item.ItemPrice;
+        _textElement.text = "Moedas: " + _currentCoins;
 
         ResolveEffect(item);
 
@@ -39,10 +42,12 @@ public class ShopController : MonoBehaviour
             case 0: //richarlison
                 GameManager.Instance.RicharlisonEffect = true;
                 break;
-            case 1: // Chuteira
+            case 1:
+                GameManager.Instance.SuperChuteira = _superChuteiraMultiplier;
 
                 break;
             case 2: // bola
+                GameManager.Instance.BolaDeBorracha = true;
                 break;
         }
     }
