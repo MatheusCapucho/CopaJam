@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class ScenesController : MonoBehaviour
 {
 
-    [SerializeField] private GameObject _panel;
+    private GameObject _panel;
 
     public void LoadSceneByName(string n) 
     {
@@ -24,7 +24,13 @@ public class ScenesController : MonoBehaviour
 
     private void EndLevel()
     {
-        _panel.SetActive(true);
+        _panel = GameObject.Find("PanelActivate");
+        _panel.GetComponent<PanelActivate>().SetActivePanel();
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 
 }

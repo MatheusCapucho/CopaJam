@@ -5,8 +5,12 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
 
-    [SerializeField]
-    private int _coinValue = 1;
+    private int _coinValue = 10;
+
+    private void Start()
+    {
+        Destroy(gameObject, 10f);
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {

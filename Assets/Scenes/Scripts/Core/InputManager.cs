@@ -31,10 +31,12 @@ public class InputManager : MonoBehaviour
     }
     private void OnEnable()
     {
+       
         _touchPressAction.performed += GetTouchPressed;
     }
     private void OnDisable()
     {
+        
         _touchPressAction.performed -= GetTouchPressed;
     }
 
