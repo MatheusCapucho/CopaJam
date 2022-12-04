@@ -89,7 +89,8 @@ public class ArrowMovement : MonoBehaviour
         _speed = _forceMultiplier * transform.localScale.x;
         SetDirection();
         Debug.Log(_speed);
-        _player.SetupRun(_direction, _speed);
+
+        _player.SetupRun(_direction, _speed); // !!
     }
 
 

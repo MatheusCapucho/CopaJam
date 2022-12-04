@@ -19,10 +19,16 @@ public class PlayerController : MonoBehaviour
         
     }
 
+    private void Start()
+    {
+
+    }
+
     private void StartRun()
     {
         _rigidbody.gravityScale = _gravityScale;
-        _rigidbody.AddForce(_direction * _speed, ForceMode2D.Impulse);
+        _rigidbody.AddForce(_direction * _speed * GameManager.Instance.SuperChuteira, ForceMode2D.Impulse);
+        GameManager.OnGameStart?.Invoke();
     }
 
     public void SetupRun(Vector3 dir, float speed)
@@ -32,6 +38,16 @@ public class PlayerController : MonoBehaviour
         StartRun();
     }
 
+    private void FixedUpdate()
+    {
+        if (!GameManager.Instance.GameHasStarted)
+            return;
+
+        if (_rigidbody.velocity == Vector2.zero)
+            GameManager.Instance.EndGame();
+
+    }
+
     private void SetDirection(Vector3 dir)
     {
         _direction = dir;
@@ -39,6 +55,11 @@ public class PlayerController : MonoBehaviour
     private void SetSpeed(float speed)
     {
         _speed = speed;
+    }
+
+    public void AddForce(Vector3 dir, float speed)
+    {
+        _rigidbody.AddForce(dir * speed * GameManager.Instance.SuperChuteira, ForceMode2D.Impulse);
     }
 
 }

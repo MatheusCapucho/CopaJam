@@ -5,7 +5,10 @@ using UnityEngine;
 public class BackgroundController : MonoBehaviour
 {
     [SerializeField] private GameObject _backgroundPrefab;
+    [SerializeField] private GameObject _backgroundPrefab2;
     [SerializeField] private Transform _player;
+
+    private GameObject _background;
 
     private Background _farthestBackground;
 
@@ -15,6 +18,15 @@ public class BackgroundController : MonoBehaviour
     {
         _cam = Camera.main;
         _farthestBackground = transform.GetChild(0).GetComponent<Background>();
+
+        if(GameManager.Instance.BolaDeBorracha)
+        {
+            _background = _backgroundPrefab2;
+        } else
+        {
+            _background = _backgroundPrefab;
+        }
+
     }
 
     // Update is called once per frame
@@ -26,7 +38,7 @@ public class BackgroundController : MonoBehaviour
 
     private void SpawnMore()
     {
-        var backgroundClone = Instantiate(_backgroundPrefab, _farthestBackground.GetNextSpawnPosition(), Quaternion.identity);
+        var backgroundClone = Instantiate(_background, _farthestBackground.GetNextSpawnPosition(), Quaternion.identity);
         _farthestBackground = backgroundClone.GetComponent<Background>();
     }
 
