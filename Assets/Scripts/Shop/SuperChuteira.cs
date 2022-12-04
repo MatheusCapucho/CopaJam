@@ -10,6 +10,6 @@ public class SuperChuteira : MonoBehaviour
     }
     public void UseEffect()
     {
-        GameManager.Instance.SuperChuteira = 2f;
+        GameManager.Instance.SuperChuteira = 13f;
     }
 }
