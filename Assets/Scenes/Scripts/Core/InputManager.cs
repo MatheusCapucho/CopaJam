@@ -27,17 +27,17 @@ public class InputManager : MonoBehaviour
     {
         _playerInput = GetComponent<PlayerInput>();
         _touchPositionAction = _playerInput.actions["TouchPosition"];
-        _touchPressAction = _playerInput.actions["TouchPosition"];
+        _touchPressAction = _playerInput.actions["TouchPress"];
     }
     private void OnEnable()
     {
        
-        _touchPressAction.performed += GetTouchPressed;
+        _touchPressAction.started += GetTouchPressed;
     }
     private void OnDisable()
     {
         
-        _touchPressAction.performed -= GetTouchPressed;
+        _touchPressAction.started -= GetTouchPressed;
     }
 
     public void GetTouchPressed(InputAction.CallbackContext ctx) 
