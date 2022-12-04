@@ -44,7 +44,7 @@ public class PlayerController : MonoBehaviour
             return;
 
         if (_rigidbody.velocity == Vector2.zero)
-            GameManager.Instance.EndGame();
+            GameManager.OnGameEnd?.Invoke();
 
     }
 
