@@ -47,3 +47,5 @@ MonoBehaviour:
   SuperChuteira: 1
   RicharlisonEffect: 0
   BolaDeBorracha: 0
+  FirstLoadBool: 1
+  Player: {fileID: 0}

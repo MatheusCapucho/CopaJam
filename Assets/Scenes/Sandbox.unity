@@ -877,7 +877,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Menu
+          m_StringArgument: Sandbox
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &786042760
@@ -2731,6 +2731,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7392197046133382162, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fc7537f0af59b824faf3d4996454db2b, type: 2}
+    - target: {fileID: 9142689842415011187, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
+      propertyPath: soundName
+      value: BolaNormal
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
 --- !u!4 &1993995274 stripped
@@ -2792,6 +2800,14 @@ PrefabInstance:
     - target: {fileID: 4573119012434175492, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7392197046133382162, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: fc7537f0af59b824faf3d4996454db2b, type: 2}
+    - target: {fileID: 9142689842415011187, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
+      propertyPath: soundName
+      value: BolaNormal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bf6feafe0058414ea3adf75f644cc21, type: 3}
@@ -2968,14 +2984,6 @@ PrefabInstance:
     - target: {fileID: 9198066176417303364, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
       propertyPath: m_Name
       value: GameManager
-      objectReference: {fileID: 0}
-    - target: {fileID: 9198066176417303365, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
-      propertyPath: BolaDeBorracha
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9198066176417303365, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
-      propertyPath: RicharlisonEffect
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}

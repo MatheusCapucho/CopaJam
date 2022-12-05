@@ -66,5 +66,13 @@ public class Leaderboard : MonoBehaviour
         }
     }
 
+    public void ApagarTudo()
+    {
+        PlayerPrefs.DeleteAll();
+        GameManager.Instance.FirstLoadBool = true;
+        GameManager.Instance.FirstLoad();
+        Start();
+    }
+
 
 }
