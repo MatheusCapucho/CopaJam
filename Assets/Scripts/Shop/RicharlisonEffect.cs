@@ -11,7 +11,7 @@ public class RicharlisonEffect : MonoBehaviour, IEffect
 
     private void Start()
     {
-        _player = GameObject.Find("Player").GetComponent<PlayerController>();
+
     }
 
     public void UseEffect()
@@ -19,9 +19,15 @@ public class RicharlisonEffect : MonoBehaviour, IEffect
         if (!GameManager.Instance.GameHasStarted)
             return;
 
+        _player = GameManager.Instance.Player.GetComponent<PlayerController>();
         _player.AddForce((Vector3)_forceDirection, _addForce);
         gameObject.SetActive(false);
         GameManager.Instance.RicharlisonEffect = false;
 
+    }
+
+    public void SetPlayer()
+    {
+        _player = GameObject.Find("Player").GetComponent<PlayerController>();
     }
 }

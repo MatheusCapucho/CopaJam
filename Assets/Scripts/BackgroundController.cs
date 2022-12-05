@@ -44,6 +44,9 @@ public class BackgroundController : MonoBehaviour
 
     void Setup()
     {
+        //migue
+
+        GameManager.Instance.Player = clone;
         transform.GetChild(0).GetComponent<UpdateDistance>().SetPlayer(clone);
         GameObject.Find("ArrowHolder").GetComponent<ArrowMovement>().SetPlayer(clone);
         GameObject.Find("CMVCam").GetComponent<CinemachineVirtualCamera>().Follow = clone.transform;

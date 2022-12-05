@@ -20,6 +20,7 @@ public class InputManager : MonoBehaviour
         else
             Instance = this;
 
+        //DontDestroyOnLoad(Instance);
         Setup();      
 
     }
@@ -42,7 +43,7 @@ public class InputManager : MonoBehaviour
 
     public void GetTouchPressed(InputAction.CallbackContext ctx) 
     {
-        Vector2 position = _touchPositionAction.ReadValue<Vector2>();
+        //Vector2 position = _touchPositionAction.ReadValue<Vector2>();
         OnTouchPressed?.Invoke();
     }
 

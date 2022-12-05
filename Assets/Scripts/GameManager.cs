@@ -30,6 +30,8 @@ public class GameManager : MonoBehaviour
 
     int currentDistanceIndex;
 
+    public GameObject Player;
+
 
 
     private void Awake()
@@ -38,6 +40,8 @@ public class GameManager : MonoBehaviour
             Destroy(this.gameObject);
         else
             Instance = this;
+
+        DontDestroyOnLoad(Instance);
 
     }
 

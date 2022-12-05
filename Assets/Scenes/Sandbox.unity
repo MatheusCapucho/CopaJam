@@ -2518,7 +2518,7 @@ GameObject:
   - component: {fileID: 1755933159}
   - component: {fileID: 1755933160}
   m_Layer: 5
-  m_Name: RicharlisonAcvate
+  m_Name: RicharlisonActivate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
