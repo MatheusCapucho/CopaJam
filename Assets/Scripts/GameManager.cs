@@ -25,12 +25,17 @@ public class GameManager : MonoBehaviour
     public bool BolaDeBorracha = false;
     private TextMeshProUGUI _coinText;
     private TextMeshProUGUI _distanceText;
+    [HideInInspector] public bool FirstLoadBool = true;
+    private string lastNameInput = string.Empty;
+    private int[] _topScores;
+    List<string> topScoresName;
 
     #endregion
 
     int currentDistanceIndex;
 
     public GameObject Player;
+
 
 
 
@@ -112,38 +117,52 @@ public class GameManager : MonoBehaviour
     public void SetLeaderBoard()
     {
         List<int> topScores = new List<int>();
+        topScoresName = new List<string>();
         if (PlayerPrefs.HasKey("Top1"))
         {
             topScores.Add(PlayerPrefs.GetInt("Top1"));
+            topScoresName.Add(PlayerPrefs.GetString("Top1Name"));
         }
         if (PlayerPrefs.HasKey("Top2"))
         {
             topScores.Add(PlayerPrefs.GetInt("Top2"));
+            topScoresName.Add(PlayerPrefs.GetString("Top2Name"));
         }
         if (PlayerPrefs.HasKey("Top3"))
         {
             topScores.Add(PlayerPrefs.GetInt("Top3"));
+            topScoresName.Add(PlayerPrefs.GetString("Top3Name"));
         }
         if (PlayerPrefs.HasKey("Top4"))
         {
             topScores.Add(PlayerPrefs.GetInt("Top4"));
+            topScoresName.Add(PlayerPrefs.GetString("Top4Name"));
 
         }
         if (PlayerPrefs.HasKey("Top5"))
         {
             topScores.Add(PlayerPrefs.GetInt("Top5"));
+            topScoresName.Add(PlayerPrefs.GetString("Top5Name"));
         }
 
         int currentDistance = GameObject.Find("DistanceObj").GetComponent<UpdateDistance>().CurrentDistance;
+
         topScores.Add(currentDistance);
         topScores.Sort();
         topScores.Reverse();
 
-        
+        //LoadScores(); //previus 
+
+        //string previusName;
+
         for (int i = 0; i < 5; i++)
         {
             if (topScores[i] == currentDistance)
+            {
+                //previusName = _topScoresName[i+1]; //blz
                 currentDistanceIndex = i;
+                //SetTopNames(previusName); //f
+            }
         }
 
         PlayerPrefs.SetInt("Top1", topScores[0]);
@@ -152,22 +171,38 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("Top4", topScores[3]);
         PlayerPrefs.SetInt("Top5", topScores[4]);
 
+        //SetTopNames(lastNameInput);
+
+
     }
 
     public void SetTopNames(string name)
     {
+        lastNameInput = name;
+        //LoadScores();
+
         switch (currentDistanceIndex) 
         {
             case 0:
+                PlayerPrefs.SetString("Top5Name", PlayerPrefs.GetString("Top4Name"));
+                PlayerPrefs.SetString("Top4Name", PlayerPrefs.GetString("Top3Name"));
+                PlayerPrefs.SetString("Top3Name", PlayerPrefs.GetString("Top2Name"));
+                PlayerPrefs.SetString("Top2Name", PlayerPrefs.GetString("Top1Name"));
                 PlayerPrefs.SetString("Top1Name", name);
                 break;
             case 1:
+                PlayerPrefs.SetString("Top5Name", PlayerPrefs.GetString("Top4Name"));
+                PlayerPrefs.SetString("Top4Name", PlayerPrefs.GetString("Top3Name"));
+                PlayerPrefs.SetString("Top3Name", PlayerPrefs.GetString("Top2Name"));
                 PlayerPrefs.SetString("Top2Name", name);
                 break;
             case 2:
+                PlayerPrefs.SetString("Top5Name", PlayerPrefs.GetString("Top4Name"));
+                PlayerPrefs.SetString("Top4Name", PlayerPrefs.GetString("Top3Name"));
                 PlayerPrefs.SetString("Top3Name", name);
                 break;
             case 3:
+                PlayerPrefs.SetString("Top5Name", PlayerPrefs.GetString("Top4Name"));
                 PlayerPrefs.SetString("Top4Name", name);
                 break;
             case 4:
@@ -178,6 +213,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+   
     private void ResetConfigs()
     {
         SuperChuteira = 1f;
@@ -185,34 +221,31 @@ public class GameManager : MonoBehaviour
         BolaDeBorracha = false;
     }
 
-    private void FirstLoad()
+    public void FirstLoad()
     {
-        if (!PlayerPrefs.HasKey("Top1"))
-        {
-            PlayerPrefs.SetInt("Top1", 0);
-            PlayerPrefs.SetString("Top1Name", "'Nome':");
-        }
-        if (!PlayerPrefs.HasKey("Top2"))
-        {
-            PlayerPrefs.SetInt("Top2", 0);
-            PlayerPrefs.SetString("Top2Name", "'Nome':");
-        }
-        if (!PlayerPrefs.HasKey("Top3"))
-        {
-            PlayerPrefs.SetInt("Top3", 0);
-            PlayerPrefs.SetString("Top3Name", "'Nome':");
-        }
-        if (!PlayerPrefs.HasKey("Top4"))
-        {
-            PlayerPrefs.SetInt("Top4", 0);
-            PlayerPrefs.SetString("Top4Name", "'Nome':");
+        _topScores = new int[5];
 
-        }
-        if (!PlayerPrefs.HasKey("Top5"))
-        {
-            PlayerPrefs.SetInt("Top5", 0);
-            PlayerPrefs.SetString("Top5Name", "'Nome':");
-        }
+        if (PlayerPrefs.HasKey("Top1"))
+            return;
+
+        PlayerPrefs.SetInt("Top1", 0);
+        PlayerPrefs.SetString("Top1Name", "'Nome1':");
+
+        PlayerPrefs.SetInt("Top2", 0);
+        PlayerPrefs.SetString("Top2Name", "'Nome2':");
+              
+        PlayerPrefs.SetInt("Top3", 0);
+        PlayerPrefs.SetString("Top3Name", "'Nome3':");
+               
+        PlayerPrefs.SetInt("Top4", 0);
+        PlayerPrefs.SetString("Top4Name", "'Nome4':");
+   
+        PlayerPrefs.SetInt("Top5", 0);
+        PlayerPrefs.SetString("Top5Name", "'Nome5':");
+
+
+        FirstLoadBool = false;
+        
     }
 
 }
