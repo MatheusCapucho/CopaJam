@@ -21,6 +21,7 @@ public class RicharlisonEffect : MonoBehaviour, IEffect
 
         _player = GameManager.Instance.Player.GetComponent<PlayerController>();
         _player.AddForce((Vector3)_forceDirection, _addForce);
+        AudioManager.instance.PlaySound("Galvao");
         gameObject.SetActive(false);
         GameManager.Instance.RicharlisonEffect = false;
 
