@@ -8,6 +8,7 @@ public class Leaderboard : MonoBehaviour
     private int[] _topScores;
     private string[] _topScoresName;
     private TextMeshProUGUI[] _texts;
+    [SerializeField] private bool _loadText = true;
 
     private void Start()
     {
@@ -16,7 +17,8 @@ public class Leaderboard : MonoBehaviour
         _topScoresName = new string[5];
         _texts = new TextMeshProUGUI[5];
         LoadScores();
-        LoadText();
+        if(_loadText)
+            LoadText();
     }
 
     private void LoadScores()
