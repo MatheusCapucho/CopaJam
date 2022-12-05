@@ -9,7 +9,7 @@
                     "name": "TouchPress",
                     "type": "Value",
                     "id": "7dc4add1-620b-45ff-a9b5-bce8b9454f98",
-                    "expectedControlType": "Touch",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
@@ -29,6 +29,17 @@
                     "name": "",
                     "id": "20151ff5-4bdf-4337-9f96-ffd9d4c75a00",
                     "path": "<Touchscreen>/Press",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPress",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "21f22f34-3d17-4816-90e7-eaff24982b64",
+                    "path": "<Mouse>/press",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
