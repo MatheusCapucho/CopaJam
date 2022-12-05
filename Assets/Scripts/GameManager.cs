@@ -87,6 +87,7 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
+        _totalCoins = 0;
         _gameHasStarted = true;
     }
 

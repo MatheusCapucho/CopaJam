@@ -2260,7 +2260,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1a613babb9c67d84f9ab487e53677ca9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 424dee2a1df2b424b8bb024a4e7ff0af, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2592,7 +2592,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: a373172e0d237c94e89892cfcf4ba1d4, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2968,6 +2968,14 @@ PrefabInstance:
     - target: {fileID: 9198066176417303364, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
       propertyPath: m_Name
       value: GameManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198066176417303365, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
+      propertyPath: BolaDeBorracha
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9198066176417303365, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
+      propertyPath: RicharlisonEffect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}

@@ -15,4 +15,4 @@ MonoBehaviour:
   ItemID: 0
   ItemName: Richarlison
   ItemImage: {fileID: 21300000, guid: 4c11b22e1e8ee244aa0bf6a9bd7623fe, type: 3}
-  ItemPrice: 500
+  ItemPrice: 200
