@@ -10,6 +10,7 @@ public class ScenesController : MonoBehaviour
 
     public void LoadSceneByName(string n) 
     {
+        
         SceneManager.LoadScene(n);
     }
 
