@@ -21,4 +21,13 @@ public class PanelActivate : MonoBehaviour
     {
         _panel.SetActive(true);
     }
+
+#if UNITY_ANDROID
+    public void OpenTouchKeyboard()
+    {
+        TouchScreenKeyboard.Open("");
+    }
+
+#endif
+
 }

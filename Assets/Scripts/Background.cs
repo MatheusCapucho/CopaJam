@@ -23,10 +23,10 @@ public class Background : MonoBehaviour
 
     private void SpawnCoin()
     {
-        for(int i = 0; i < 20; i++)
+        for(int i = 0; i < 70; i++)
         {
-            var xx = Random.Range(-16, 45);
-            var yy = Random.Range(-35, 20);
+            var xx = Random.Range(-16, 50);
+            var yy = Random.Range(-20, 80);
             Instantiate(_coin, transform.position + new Vector3(xx, yy, 0f), Quaternion.identity);
         }
         

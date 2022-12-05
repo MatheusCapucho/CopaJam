@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 public class RicharlisonEffect : MonoBehaviour, IEffect
 {
-    [SerializeField] private float _addForce = 10f;
+    [SerializeField] private float _addForce = 50f;
     [SerializeField] private Vector2 _forceDirection = new Vector2(1, 1);
 
     private PlayerController _player;

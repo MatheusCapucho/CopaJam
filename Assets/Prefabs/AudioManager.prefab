@@ -46,8 +46,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sounds:
   - audioSource: {fileID: 0}
-    name: 
-    clip: {fileID: 0}
+    name: Galvao
+    clip: {fileID: 8300000, guid: a32500fc247fd1e47b74ca10b25e57ba, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+  - audioSource: {fileID: 0}
+    name: Richarlison
+    clip: {fileID: 8300000, guid: a32500fc247fd1e47b74ca10b25e57ba, type: 3}
+    volume: 0.35
+    pitch: 1
+    loop: 0
+  - audioSource: {fileID: 0}
+    name: BolaNormal
+    clip: {fileID: 8300000, guid: 6c212bf5f690bf540b226b1c86408f2b, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+  - audioSource: {fileID: 0}
+    name: Borracha
+    clip: {fileID: 8300000, guid: acad0dbaac288bd418164bc538802264, type: 3}
     volume: 0.5
     pitch: 1
     loop: 0

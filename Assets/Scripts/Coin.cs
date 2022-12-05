@@ -9,7 +9,7 @@ public class Coin : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, 10f);
+        Destroy(gameObject, 15f);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
