@@ -2985,5 +2985,9 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 9198066176417303365, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
+      propertyPath: RicharlisonEffect
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2cabd628efbce414892bffe41b8d186a, type: 3}
